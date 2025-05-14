@@ -1,0 +1,30 @@
+{
+  "name": "godo",
+  "version": "1.0.0",
+  "description": "A cross-platform desktop Todo app built with Electron and React, designed for both human users and LLMs. Integrates Model Context Protocol (MCP) to enable seamless interaction from large language models.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jajimajp/godo.git"
+  },
+  "author": "Yajima Soichi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jajimajp/godo/issues"
+  },
+  "homepage": "https://github.com/jajimajp/godo#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.2",
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "electron": "^36.2.0",
+    "esbuild": "^0.25.4"
+  }
+}
