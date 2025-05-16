@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const  path = require('node:path')
 const { TodosModel } = require('./todosModel')
+const { startMcpServer } = require('./mcpServer')
 
 const todosModel = new TodosModel()
 
@@ -31,4 +32,5 @@ app.whenReady().then(() => {
   ipcMain.handle('complete', (_event, id) => todosApi.complete(id))
 
   win.loadFile('index.html')
+  startMcpServer(todosApi)
 })
