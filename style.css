@@ -1,0 +1,86 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px 0;
+  background: #eee;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+form {
+  width: 100%;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 1px 2px 2px #888;
+
+  input[type="text"] {
+    box-sizing: border-box;
+    font-size: inherit;
+    width: 100%;
+    border: 1px solid #333;
+    padding: 12px 12px 60px 12px;
+    border-radius: 16px;
+    background: #f8f8f8;
+  }
+
+  button {
+    font-weight: bold;
+    font-size: inherit;
+    color: white;
+    background: #3273f6;
+    border: none;
+
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 4px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  border-radius: 12px;
+}
+
+label {
+  display: flex;
+  gap: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: 1px 2px 2px #888;
+  border: 1px solid #888;
+  border-radius: 12px;
+  padding: 8px;
+  cursor: pointer;
+  background: #f8f8f8;
+
+  &:hover {
+    text-decoration: line-through;
+    filter: brightness(95%);
+  }
+
+  &:has(input:checked) {
+    text-decoration: line-through;
+    cursor: initial;
+
+    &:hover {
+      filter: initial;
+    }
+  }
+}
