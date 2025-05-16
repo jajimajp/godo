@@ -1,15 +1,20 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 
-const App = () => {
-  const todos = [
-    { id: 1, title: 'タスク１', completed: true  },
-    { id: 2, title: 'タスク２', completed: false },
-    { id: 3, title: 'タスク３', completed: false },
-  ]
+const App = ({ initialTodos }) => {
+  const [todos, setTodos] = React.useState(initialTodos)
 
-  const addTodo = () => { alert('addTodo: まだ実装されていません！') }
-  const completeTodo = () => { alert('completeTodo: まだ実装されていません！') }
+  React.useEffect(() => {
+    const callback = (todos) => setTodos(todos)
+    const unsubscribe = todosClient.subscribeOnUpdate(callback)
+    return unsubscribe
+  }, [setTodos, todosClient])
+
+  const addTodo = (formData) => {
+    const title = formData.get('title')
+    todosClient.add(title)
+  }
+  const completeTodo = (id) => { todosClient.complete(id) }
 
   return (
     <>
@@ -39,5 +44,5 @@ const App = () => {
 }
 
 const root = createRoot(document.getElementById('root'))
-root.render(<App />)
+todosClient.list().then((todos) => root.render(<App initialTodos={todos} />))
 
